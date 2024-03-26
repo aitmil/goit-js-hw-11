@@ -1,24 +1,51 @@
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 button {
   cursor: pointer;
 }
 
 img {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 360px;
+  height: 200px;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
   padding: 36px;
   background-color: #fff;
 }
 
-form {
+.container {
+  max-width: 1134px;
+  margin: 0 auto;
+}
+
+.search-form {
   display: flex;
   gap: 8px;
   max-width: 371px;
-  margin: 0 auto;
+  margin: 0 auto 32px;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
@@ -63,6 +90,42 @@ button:hover {
 button:focus,
 button:active {
   outline: none;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.thumb {
+  position: relative;
+  border: 1px solid #808080;
+}
+
+.gallery-data-list {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 360px;
+  display: flex;
+  justify-content: space-evenly;
+  /* gap: 28px; */
+  background-color: #fff;
+}
+
+.gallery-data-item {
+  /* flex-basis: calc(100% / 4 - 28px); */
+}
+
+.gallery-data-item h3 {
+  font-weight: 600;
+}
+
+.gallery-data-item p {
+  line-height: 200%;
+  text-align: center;
 }
 
 /* === Loader === */
