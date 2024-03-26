@@ -10,31 +10,33 @@ export function galleryTemplate(arr) {
         comments,
         downloads,
         ...info
-      }) => ` <li class="gallery-item">
-      <div class="lightbox">
-        <a class="gallery-link" href="${largeImageURL}">
-          <img class="gallery-image" src="${webformatURL}" alt="${tags}"
-        /></a>
-      </div>
-      <ul class="gallery-data-list">
-        <li class="gallery-data-item">
-          <h2>Likes</h2>
-          <p>${likes}</p>
-        </li>
-        <li class="gallery-data-item">
-          <h2>Views</h2>
-          <p>${views}</p>
-        </li>
-        <li class="gallery-data-item">
-          <h2>Comment</h2>
-          <p>${comments}</p>
-        </li>
-        <li class="gallery-data-item">
-          <h2>Downloads</h2>
-          <p>${downloads}</p>
-        </li>
-      </ul>
-    </li>
+      }) => ` <div class="thumb">
+      <li class="gallery-item">
+        <div class="lightbox">
+          <a class="gallery-link" href="${largeImageURL}">
+            <img class="gallery-image" src="${webformatURL}" alt="${tags}"
+          /></a>
+        </div>
+        <ul class="gallery-data-list">
+          <li class="gallery-data-item">
+            <h3>Likes</h3>
+            <p>${likes}</p>
+          </li>
+          <li class="gallery-data-item">
+            <h3>Views</h3>
+            <p>${views}</p>
+          </li>
+          <li class="gallery-data-item">
+            <h3>Comment</h3>
+            <p>${comments}</p>
+          </li>
+          <li class="gallery-data-item">
+            <h3>Downloads</h3>
+            <p>${downloads}</p>
+          </li>
+        </ul>
+      </li>
+    </div>
 `
     )
     .join('');
