@@ -9,16 +9,31 @@ import { galleryTemplate } from './js/render-functions';
 
 const searchForm = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
+const loader = document.querySelector('.loader');
 
 let lightbox = new SimpleLightbox('.lightbox a', { captionsData: 'alt' });
 lightbox.on('show.simplelightbox', function () {});
 
+showLoader();
+setTimeout(hideLoader, 100);
+
 searchForm.addEventListener('submit', onSubmit);
+
+function showLoader() {
+  loader.classList.remove('hidden');
+}
+
+function hideLoader() {
+  loader.classList.add('hidden');
+}
+
 function onSubmit(evt) {
   evt.preventDefault();
   const query = evt.target.elements.search.value.trim();
 
   if (query !== '') {
+    // gallery.innerHTML = '';
+    showLoader();
     getImage(query)
       .then(data => {
         const markup = galleryTemplate(data.hits);
@@ -38,7 +53,9 @@ function onSubmit(evt) {
       .catch(err => {
         console.log(err);
       })
-      .finally(() => document.querySelector('.loader'));
+      .finally(() => {
+        hideLoader();
+      });
   }
   evt.target.reset();
 }
