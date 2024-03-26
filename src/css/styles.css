@@ -36,11 +36,6 @@ body {
   background-color: #fff;
 }
 
-.container {
-  max-width: 1134px;
-  margin: 0 auto;
-}
-
 .search-form {
   display: flex;
   gap: 8px;
@@ -97,6 +92,7 @@ button:active {
   flex-wrap: wrap;
   gap: 24px;
   justify-content: center;
+  width: 1134px;
 }
 
 .thumb {
@@ -111,12 +107,7 @@ button:active {
   width: 360px;
   display: flex;
   justify-content: space-evenly;
-  /* gap: 28px; */
   background-color: #fff;
-}
-
-.gallery-data-item {
-  /* flex-basis: calc(100% / 4 - 28px); */
 }
 
 .gallery-data-item h3 {
