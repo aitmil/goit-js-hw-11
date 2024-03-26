@@ -17,7 +17,6 @@ searchForm.addEventListener('submit', onSubmit);
 function onSubmit(evt) {
   evt.preventDefault();
   const query = evt.target.elements.search.value.trim();
-  gallery.innerHTML = '<div class="loader"></div>';
 
   if (query !== '') {
     getImage(query)
@@ -38,7 +37,8 @@ function onSubmit(evt) {
       })
       .catch(err => {
         console.log(err);
-      });
+      })
+      .finally(() => document.querySelector('.loader'));
   }
   evt.target.reset();
 }
